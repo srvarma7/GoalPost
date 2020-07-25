@@ -18,6 +18,7 @@
 		8033894824CAB3E9003187A5 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894724CAB3E9003187A5 /* GoalType.swift */; };
 		8033894A24CC0AC5003187A5 /* NewGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894924CC0AC5003187A5 /* NewGoalVC.swift */; };
 		8033894C24CC0F10003187A5 /* CustomUIViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894B24CC0F10003187A5 /* CustomUIViewControllerTransition.swift */; };
+		8033894E24CC196A003187A5 /* CustomButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894D24CC196A003187A5 /* CustomButtonExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		8033894724CAB3E9003187A5 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		8033894924CC0AC5003187A5 /* NewGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalVC.swift; sourceTree = "<group>"; };
 		8033894B24CC0F10003187A5 /* CustomUIViewControllerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewControllerTransition.swift; sourceTree = "<group>"; };
+		8033894D24CC196A003187A5 /* CustomButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				8033894B24CC0F10003187A5 /* CustomUIViewControllerTransition.swift */,
+				8033894D24CC196A003187A5 /* CustomButtonExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8033894E24CC196A003187A5 /* CustomButtonExt.swift in Sources */,
 				8033892824CA994F003187A5 /* AppDelegate.swift in Sources */,
 				8033893224CA994F003187A5 /* GoalPost.xcdatamodeld in Sources */,
 				8033894824CAB3E9003187A5 /* GoalType.swift in Sources */,

@@ -15,17 +15,26 @@ class NewGoalVC: UIViewController {
     @IBOutlet weak var shortBtn: UIButton!
     @IBOutlet weak var nextBtn: UIButton!
     
+    var goalType: GoalType = .Longterm
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        goalDesc.inputAccessoryView = nextBtn
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onLongBtnTapped(_ sender: Any) {
+        goalType = .Longterm
+        longBtn.makeSelection()
+        shortBtn.makeDeselection()
     }
     
     @IBAction func onShortBtnTapped(_ sender: Any) {
+        goalType = .Shortterm
+        shortBtn.makeSelection()
+        longBtn.makeDeselection()
     }
     
     @IBAction func onNextTapped(_ sender: Any) {
