@@ -23,6 +23,8 @@ class GoalsVC: UIViewController {
     
     // MARK: - Goal button tapped
     @IBAction func onAddingGoalTapped(_ sender: Any) {
+        guard let newGoalVC = storyboard?.instantiateViewController(withIdentifier: "Create") else { return }
+        presentCreateGoalVC(newGoalVC)
     }
     
     /*

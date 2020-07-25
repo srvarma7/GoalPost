@@ -32,7 +32,8 @@ class NewGoalVC: UIViewController {
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        dismiss(animated: true)
+        guard let goalsVC = storyboard?.instantiateViewController(withIdentifier: "Goals") else { return }
+        dismissCreateGoalVC(goalsVC)
     }
     /*
     // MARK: - Navigation
