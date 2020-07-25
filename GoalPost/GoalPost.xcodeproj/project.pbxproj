@@ -16,6 +16,7 @@
 		8033894424CAA06B003187A5 /* GoalsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894324CAA06B003187A5 /* GoalsVC.swift */; };
 		8033894624CAA8CF003187A5 /* GoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894524CAA8CF003187A5 /* GoalCell.swift */; };
 		8033894824CAB3E9003187A5 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894724CAB3E9003187A5 /* GoalType.swift */; };
+		8033894A24CC0AC5003187A5 /* NewGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894924CC0AC5003187A5 /* NewGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8033894324CAA06B003187A5 /* GoalsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsVC.swift; sourceTree = "<group>"; };
 		8033894524CAA8CF003187A5 /* GoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalCell.swift; sourceTree = "<group>"; };
 		8033894724CAB3E9003187A5 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
+		8033894924CC0AC5003187A5 /* NewGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				8033894324CAA06B003187A5 /* GoalsVC.swift */,
+				8033894924CC0AC5003187A5 /* NewGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				8033892824CA994F003187A5 /* AppDelegate.swift in Sources */,
 				8033893224CA994F003187A5 /* GoalPost.xcdatamodeld in Sources */,
 				8033894824CAB3E9003187A5 /* GoalType.swift in Sources */,
+				8033894A24CC0AC5003187A5 /* NewGoalVC.swift in Sources */,
 				8033892A24CA994F003187A5 /* SceneDelegate.swift in Sources */,
 				8033894624CAA8CF003187A5 /* GoalCell.swift in Sources */,
 				8033894424CAA06B003187A5 /* GoalsVC.swift in Sources */,

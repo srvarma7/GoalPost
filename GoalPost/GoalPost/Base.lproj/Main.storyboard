@@ -173,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="-34" y="30"/>
         </scene>
-        <!--View Controller-->
+        <!--New GoalVC-->
         <scene sceneID="lY2-Df-Y0D">
             <objects>
-                <viewController id="ZsU-64-jLs" sceneMemberID="viewController">
+                <viewController id="ZsU-64-jLs" customClass="NewGoalVC" customModule="GoalPost" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8PG-df-Ep2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +209,7 @@
                                         <state key="normal" image="back"/>
                                         <connections>
                                             <action selector="onAddingGoalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cBS-2R-PUf"/>
+                                            <action selector="onBackBtnTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="twr-Pa-Xtd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -224,14 +225,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1wg-m8-w7j">
                                 <rect key="frame" x="20" y="105" width="335" height="300"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-LS-fod">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What's your goal?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vLu-LS-fod">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="210"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="210" id="Tnn-vf-CLe"/>
                                         </constraints>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -250,6 +250,9 @@
                                                 <state key="normal" title="Long Term">
                                                     <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onLongBtnTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="Hra-uZ-fSF"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oh-Zx-D7f">
                                                 <rect key="frame" x="180" y="0.0" width="155" height="45"/>
@@ -257,6 +260,9 @@
                                                 <state key="normal" title="Short Term">
                                                     <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="onShortBtnTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="KrF-2H-brn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -284,6 +290,9 @@
                                 <state key="normal" title="NEXT">
                                     <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onNextTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="u5G-0J-FUO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -301,6 +310,12 @@
                         <viewLayoutGuide key="safeArea" id="rIi-oC-5kr"/>
                     </view>
                     <navigationItem key="navigationItem" id="tG9-je-R0G"/>
+                    <connections>
+                        <outlet property="goalDesc" destination="vLu-LS-fod" id="wMG-EQ-PU9"/>
+                        <outlet property="longBtn" destination="pzp-ba-2Oe" id="hpZ-0u-pkC"/>
+                        <outlet property="nextBtn" destination="A7f-hx-2Ng" id="1Ts-0X-AnV"/>
+                        <outlet property="shortBtn" destination="9Oh-Zx-D7f" id="uOd-rb-Ebo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPx-Vt-M03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
