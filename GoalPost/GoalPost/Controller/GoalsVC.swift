@@ -51,7 +51,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? GoalCell else {
             return GoalCell()
         }
-        cell.updateCell(desc: "sa", type: "asasf", progress: 3)
+        cell.updateCell(desc: "sa", type: .Longterm, progress: 3)
         return cell
     }
 }
