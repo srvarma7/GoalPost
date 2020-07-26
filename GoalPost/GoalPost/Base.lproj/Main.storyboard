@@ -294,7 +294,7 @@
                                     <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onNextTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="u5G-0J-FUO"/>
+                                    <action selector="onNextTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="RPU-rW-DRg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -316,13 +316,118 @@
                     <connections>
                         <outlet property="goalDesc" destination="vLu-LS-fod" id="wMG-EQ-PU9"/>
                         <outlet property="longBtn" destination="pzp-ba-2Oe" id="hpZ-0u-pkC"/>
-                        <outlet property="nextBtn" destination="A7f-hx-2Ng" id="1Ts-0X-AnV"/>
+                        <outlet property="nextBtn" destination="A7f-hx-2Ng" id="9mF-q9-src"/>
                         <outlet property="shortBtn" destination="9Oh-Zx-D7f" id="uOd-rb-Ebo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPx-Vt-M03" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="805.60000000000002" y="27.436281859070466"/>
+        </scene>
+        <!--FinishVC-->
+        <scene sceneID="VKR-2A-BUU">
+            <objects>
+                <viewController storyboardIdentifier="finish" id="AQQ-Gp-7XT" customClass="FinishVC" customModule="GoalPost" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPf-8R-H0p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Go-yG-F7a">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-ET-RCd">
+                                        <rect key="frame" x="127.5" y="20" width="120" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Finish" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-iM-aow">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFM-uw-bcr">
+                                                <rect key="frame" x="64" y="0.0" width="56" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                                <color key="textColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Hhh-F7-1jN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZZ-GB-X3P">
+                                        <rect key="frame" x="15" y="22.5" width="14" height="25"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="onAddingGoalTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EJH-6M-da6"/>
+                                            <action selector="onBackBtnTapped:" destination="AQQ-Gp-7XT" eventType="touchUpInside" id="QOR-P8-Yfc"/>
+                                            <action selector="onBackBtnTapped:" destination="ZsU-64-jLs" eventType="touchUpInside" id="bwd-Fr-BEH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70858970210000005" green="0.14916383220000001" blue="0.261334277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bZZ-GB-X3P" firstAttribute="leading" secondItem="4Go-yG-F7a" secondAttribute="leading" constant="15" id="71u-Zu-ubo"/>
+                                    <constraint firstAttribute="height" constant="60" id="Cvd-n7-QgG"/>
+                                    <constraint firstItem="Vyr-ET-RCd" firstAttribute="centerY" secondItem="bZZ-GB-X3P" secondAttribute="centerY" id="MKH-V1-RJ6"/>
+                                    <constraint firstItem="Vyr-ET-RCd" firstAttribute="centerX" secondItem="4Go-yG-F7a" secondAttribute="centerX" id="mPB-PQ-2je"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vyr-ET-RCd" secondAttribute="bottom" constant="10" id="pR0-TK-faw"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VzW-XS-LIG">
+                                <rect key="frame" x="20" y="85" width="335" height="91"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many points to complete the goal?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="miA-V2-ZXq">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-I6-dAM">
+                                        <rect key="frame" x="0.0" y="35.5" width="335" height="55.5"/>
+                                        <color key="textColor" red="0.70858970210000005" green="0.14916383220000001" blue="0.261334277" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfj-Ph-z6Z">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6v8-fu-gZC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <state key="normal" title="CREATE">
+                                    <color key="titleColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCreateTapped:" destination="AQQ-Gp-7XT" eventType="touchUpInside" id="VaS-CU-X70"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4Go-yG-F7a" firstAttribute="top" secondItem="uLI-kp-yqY" secondAttribute="top" id="CRl-XZ-o5t"/>
+                            <constraint firstAttribute="trailing" secondItem="hfj-Ph-z6Z" secondAttribute="trailing" id="D2I-ze-0VA"/>
+                            <constraint firstItem="VzW-XS-LIG" firstAttribute="top" secondItem="4Go-yG-F7a" secondAttribute="bottom" constant="25" id="QSb-1t-mHn"/>
+                            <constraint firstItem="uLI-kp-yqY" firstAttribute="bottom" secondItem="hfj-Ph-z6Z" secondAttribute="bottom" id="Tvp-Ge-dd3"/>
+                            <constraint firstItem="hfj-Ph-z6Z" firstAttribute="leading" secondItem="uLI-kp-yqY" secondAttribute="leading" id="ZId-na-cCz"/>
+                            <constraint firstItem="4Go-yG-F7a" firstAttribute="leading" secondItem="nPf-8R-H0p" secondAttribute="leading" id="ZcH-bB-AvH"/>
+                            <constraint firstItem="VzW-XS-LIG" firstAttribute="leading" secondItem="uLI-kp-yqY" secondAttribute="leading" constant="20" id="Zm6-Oq-F07"/>
+                            <constraint firstItem="uLI-kp-yqY" firstAttribute="trailing" secondItem="VzW-XS-LIG" secondAttribute="trailing" constant="20" id="ieb-Vw-4bi"/>
+                            <constraint firstItem="uLI-kp-yqY" firstAttribute="trailing" secondItem="4Go-yG-F7a" secondAttribute="trailing" id="s4p-dk-rxv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uLI-kp-yqY"/>
+                    </view>
+                    <connections>
+                        <outlet property="createBtn" destination="hfj-Ph-z6Z" id="wFS-LB-C2j"/>
+                        <outlet property="pointsLbl" destination="dwc-I6-dAM" id="iI0-xb-LW8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1q3-3F-Ovr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="26.53673163418291"/>
         </scene>
     </scenes>
     <resources>

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     
-    func presentCreateGoalVC(_ viewController: UIViewController) {
+    func presentVC(_ viewController: UIViewController) {
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = .push

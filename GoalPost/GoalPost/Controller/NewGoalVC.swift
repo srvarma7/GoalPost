@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewGoalVC: UIViewController {
+class NewGoalVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var goalDesc: UITextView!
     @IBOutlet weak var longBtn: UIButton!
@@ -21,6 +21,7 @@ class NewGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        goalDesc.delegate = self
         goalDesc.inputAccessoryView = nextBtn
         // Do any additional setup after loading the view.
     }
@@ -38,6 +39,11 @@ class NewGoalVC: UIViewController {
     }
     
     @IBAction func onNextTapped(_ sender: Any) {
+        if goalDesc.text != "" && goalDesc.text != "What's your goal?" {
+            guard let finishVC = storyboard?.instantiateViewController(withIdentifier: "finish") as? FinishVC else { return }
+            finishVC.initialiseVariables(desc: goalDesc.text!, type: goalType)
+            presentVC(finishVC)
+        }
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
@@ -53,5 +59,10 @@ class NewGoalVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        goalDesc.text = ""
+        goalDesc.textColor = .black
+    }
 
 }
