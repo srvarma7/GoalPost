@@ -21,7 +21,22 @@ extension UIViewController {
         present(viewController, animated: false, completion: nil)
     }
     
-    func dismissCreateGoalVC(_ viewController: UIViewController) {
+    func dismissAndPresentVC(_ viewController: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = .push
+        transition.subtype = .fromRight
+        
+        viewController.modalPresentationStyle = .fullScreen
+        
+        guard let presentedVC = presentedViewController else { return }
+        presentedVC.dismiss(animated: false, completion: {
+            self.view.window?.layer.add(transition, forKey: kCATransition)
+            self.present(viewController, animated: false, completion: nil)
+        })
+    }
+    
+    func dismissVC() {
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = .push

@@ -42,13 +42,12 @@ class NewGoalVC: UIViewController, UITextViewDelegate {
         if goalDesc.text != "" && goalDesc.text != "What's your goal?" {
             guard let finishVC = storyboard?.instantiateViewController(withIdentifier: "finish") as? FinishVC else { return }
             finishVC.initialiseVariables(desc: goalDesc.text!, type: goalType)
-            presentVC(finishVC)
+            presentingViewController?.dismissAndPresentVC(finishVC)
         }
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        guard let goalsVC = storyboard?.instantiateViewController(withIdentifier: "Goals") else { return }
-        dismissCreateGoalVC(goalsVC)
+        dismissVC()
     }
     /*
     // MARK: - Navigation

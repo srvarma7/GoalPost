@@ -33,24 +33,32 @@ class FinishVC: UIViewController, UITextViewDelegate {
     
     @IBAction func onCreateTapped(_ sender: Any) {
         if pointsLbl.text != "" {
-            guard let context = appDelegate?.persistentContainer.viewContext else { return }
-            let goal = Goal()
-            goal.desc = goalDes
-            goal.type = type.rawValue
-            goal.completionValue = Int32(pointsLbl.text!)!
-            goal.progress = Int32(0)
-            do {
-                try context.save()
-            } catch {
-                debugPrint(error.localizedDescription)
+            saveGoal { (status) in
+                if status {
+                    dismissVC()
+                }
             }
-            
+        }
+    }
+    
+    func saveGoal(completion: (_ finished: Bool) -> ()) {
+        guard let context = appDelegate?.persistentContainer.viewContext else { return }
+        let goal = Goal(context: context)
+        goal.desc = goalDes
+        goal.type = type.rawValue
+        goal.completionValue = Int32(pointsLbl.text!)!
+        goal.progress = Int32(0)
+        do {
+            try context.save()
+            completion(true)
+        } catch {
+            debugPrint(error.localizedDescription)
+            completion(false)
         }
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
-        guard let goalsVC = storyboard?.instantiateViewController(withIdentifier: "Create") else { return }
-        dismissCreateGoalVC(goalsVC)
+        dismissVC()
     }
     
     // MARK: - Navigation
