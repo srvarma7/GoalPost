@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
 
 class FinishVC: UIViewController, UITextViewDelegate {
     
@@ -29,7 +32,20 @@ class FinishVC: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func onCreateTapped(_ sender: Any) {
-        
+        if pointsLbl.text != "" {
+            guard let context = appDelegate?.persistentContainer.viewContext else { return }
+            let goal = Goal()
+            goal.desc = goalDes
+            goal.type = type.rawValue
+            goal.completionValue = Int32(pointsLbl.text!)!
+            goal.progress = Int32(0)
+            do {
+                try context.save()
+            } catch {
+                debugPrint(error.localizedDescription)
+            }
+            
+        }
     }
     
     @IBAction func onBackBtnTapped(_ sender: Any) {
@@ -37,14 +53,6 @@ class FinishVC: UIViewController, UITextViewDelegate {
         dismissCreateGoalVC(goalsVC)
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

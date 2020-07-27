@@ -20,6 +20,8 @@
 		8033894C24CC0F10003187A5 /* CustomUIViewControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894B24CC0F10003187A5 /* CustomUIViewControllerTransition.swift */; };
 		8033894E24CC196A003187A5 /* CustomButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894D24CC196A003187A5 /* CustomButtonExt.swift */; };
 		8033895024CC2975003187A5 /* FinishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033894F24CC2975003187A5 /* FinishVC.swift */; };
+		8033895B24CD7ECB003187A5 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033895924CD7ECB003187A5 /* Goal+CoreDataClass.swift */; };
+		8033895C24CD7ECB003187A5 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033895A24CD7ECB003187A5 /* Goal+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		8033894B24CC0F10003187A5 /* CustomUIViewControllerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIViewControllerTransition.swift; sourceTree = "<group>"; };
 		8033894D24CC196A003187A5 /* CustomButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonExt.swift; sourceTree = "<group>"; };
 		8033894F24CC2975003187A5 /* FinishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishVC.swift; sourceTree = "<group>"; };
+		8033895924CD7ECB003187A5 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
+		8033895A24CD7ECB003187A5 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 		8033893E24CA9990003187A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8033895924CD7ECB003187A5 /* Goal+CoreDataClass.swift */,
+				8033895A24CD7ECB003187A5 /* Goal+CoreDataProperties.swift */,
 				8033893024CA994F003187A5 /* GoalPost.xcdatamodeld */,
 			);
 			path = Model;
@@ -201,11 +207,13 @@
 			files = (
 				8033894E24CC196A003187A5 /* CustomButtonExt.swift in Sources */,
 				8033895024CC2975003187A5 /* FinishVC.swift in Sources */,
+				8033895C24CD7ECB003187A5 /* Goal+CoreDataProperties.swift in Sources */,
 				8033892824CA994F003187A5 /* AppDelegate.swift in Sources */,
 				8033893224CA994F003187A5 /* GoalPost.xcdatamodeld in Sources */,
 				8033894824CAB3E9003187A5 /* GoalType.swift in Sources */,
 				8033894A24CC0AC5003187A5 /* NewGoalVC.swift in Sources */,
 				8033894C24CC0F10003187A5 /* CustomUIViewControllerTransition.swift in Sources */,
+				8033895B24CD7ECB003187A5 /* Goal+CoreDataClass.swift in Sources */,
 				8033892A24CA994F003187A5 /* SceneDelegate.swift in Sources */,
 				8033894624CAA8CF003187A5 /* GoalCell.swift in Sources */,
 				8033894424CAA06B003187A5 /* GoalsVC.swift in Sources */,
