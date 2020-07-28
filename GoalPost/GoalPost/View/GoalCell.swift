@@ -15,10 +15,21 @@ class GoalCell: UITableViewCell {
     @IBOutlet weak var typeLbl: UILabel!
     @IBOutlet weak var progress: UILabel!
     
-    func updateCell(desc: String, type: String, progress: String) {
-        self.goalLbl.text = desc
-        self.typeLbl.text = type
-        self.progress.text = progress   
+    @IBOutlet weak var compView: UIView!
+    @IBOutlet weak var compLbl: UILabel!
+    
+    func updateCell(goal: Goal) {
+        self.goalLbl.text = goal.desc
+        self.typeLbl.text = goal.type
+        self.progress.text = String(goal.progress)
+        
+        if goal.progress == goal.completionValue {
+            compView.isHidden = false
+            bringSubviewToFront(compLbl)
+        } else {
+            compView.isHidden = true
+
+        }
     }
     
 }

@@ -65,7 +65,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? GoalCell else {
             return GoalCell()
         }
-        cell.updateCell(desc: goals[indexPath.row].desc!, type: goals[indexPath.row].type!, progress: String(goals[indexPath.row].progress))
+        cell.updateCell(goal: goals[indexPath.row])
         return cell
     }
     
@@ -80,7 +80,7 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let deleteA = UITableViewRowAction(style: .destructive, title: "Del") { (rowAction, indexPath) in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             
             self.deleteGoal(atIndex: indexPath)
             self.goals.remove(at: indexPath.row)
@@ -88,19 +88,37 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
             self.fetchData()
         }
         
-//        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (row, index) in
-//            tableView.deleteRows(at: [index], with: UITableView.RowAnimation.middle)
-//            self.deleteGoal(atIndex: index)
-//            self.fetchData()
-//        }
-        deleteA.backgroundColor = .red
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD 1") { (row, index) in
+            tableView.reloadRows(at: [index], with: .automatic)
+            self.updateGoalProgress(atIndex: index)
+            self.fetchData()
+        }
+        deleteAction.backgroundColor = .red
+        addAction.backgroundColor = .orange
         
-        return [deleteA]
+        return [deleteAction, addAction]
     }
 }
 
 // MARK:- Extension Core Data (CRD)
 extension GoalsVC {
+    
+    func updateGoalProgress(atIndex: IndexPath) {
+        guard let context = appDelegate?.persistentContainer.viewContext else { return }
+
+        let chosenGoal = goals[atIndex.row]
+        if chosenGoal.progress < chosenGoal.completionValue {
+            chosenGoal.progress += 1
+        } else {
+            return
+        }
+        
+        do {
+            try context.save()
+        } catch {
+            debugPrint("Error updating \(error.localizedDescription)")
+        }
+    }
     
     func deleteGoal(atIndex: IndexPath) {
         guard let context = appDelegate?.persistentContainer.viewContext else { return }
