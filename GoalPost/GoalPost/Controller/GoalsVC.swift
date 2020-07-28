@@ -25,6 +25,10 @@ class GoalsVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        fetchData()
+    }
+    
+    func fetchData() {
         fetchGoals { (status) in
             if status {
                 if goals.count > 0 {
@@ -37,7 +41,7 @@ class GoalsVC: UIViewController {
         tableView.reloadData()
     }
     
-    // MARK: - Goal button tapped
+    // MARK: - Create Goal tapped
     @IBAction func onAddingGoalTapped(_ sender: Any) {
         guard let newGoalVC = storyboard?.instantiateViewController(withIdentifier: "Create") else { return }
         presentVC(newGoalVC)
@@ -45,8 +49,10 @@ class GoalsVC: UIViewController {
     
 }
 
+// MARK:- Extension Table View
 extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
     
+    // MARK:- Showing Goals
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -62,9 +68,50 @@ extension GoalsVC: UITableViewDelegate, UITableViewDataSource {
         cell.updateCell(desc: goals[indexPath.row].desc!, type: goals[indexPath.row].type!, progress: String(goals[indexPath.row].progress))
         return cell
     }
+    
+    // MARK:- Editing (Delete and Prog)
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteA = UITableViewRowAction(style: .destructive, title: "Del") { (rowAction, indexPath) in
+            
+            self.deleteGoal(atIndex: indexPath)
+            self.goals.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.fetchData()
+        }
+        
+//        let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (row, index) in
+//            tableView.deleteRows(at: [index], with: UITableView.RowAnimation.middle)
+//            self.deleteGoal(atIndex: index)
+//            self.fetchData()
+//        }
+        deleteA.backgroundColor = .red
+        
+        return [deleteA]
+    }
 }
 
+// MARK:- Extension Core Data (CRD)
 extension GoalsVC {
+    
+    func deleteGoal(atIndex: IndexPath) {
+        guard let context = appDelegate?.persistentContainer.viewContext else { return }
+        context.delete(goals[atIndex.row])
+        
+        do {
+            try context.save()
+        } catch {
+            debugPrint("Error deleting \(error.localizedDescription)")
+        }
+    }
     
     func fetchGoals(completion: (_ finish: Bool) -> ()) {
         guard let context = appDelegate?.persistentContainer.viewContext else { return }
